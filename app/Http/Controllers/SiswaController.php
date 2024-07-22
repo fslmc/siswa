@@ -129,7 +129,7 @@ class SiswaController extends Controller
                 'jenis_kelamin' => $request->jenis_kelamin,
                 'no_hp' => $request->no_hp,
                 'kelas' => $request->kelas,
-                'created_at' => $request->Carbon::now('Asia/Jakarta')
+                'updated_at' => Carbon::now('Asia/Jakarta')
             ]);
             } catch (QueryException $e){
             $error = $e->getMessage();

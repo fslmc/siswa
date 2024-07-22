@@ -30,6 +30,7 @@
                                     <th scope="col">Jenis Kelamin</th>
                                     <th scope="col">No. Hp</th>
                                     <th scope="col">Kelas</th>
+                                    <th scope="col">Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -51,7 +52,7 @@
                                                 class="btn btn-primary btn-sm" data-bs-toggle="tooltip" 
                                                 data-bs-placement="top" title="Edit Siswa">
                                                 <i class="fas fa-edit"></i></a>
-                                                <a href="#"
+                                            <a href="#"
                                                 class="btn btn-danger btn-sm" data-bs-toggle="tooltip"
                                                 data-bs-placement="top" title="Hapus Siswa"
                                                 onclick="event.preventDefault();
@@ -78,17 +79,16 @@
                                 @endforeach
                             </tbody>
                         </table>
-
+                        @push('scripts')
+                            <script>
+                                $(document).ready(function() {
+                                    $('#myTable').DataTable();
+                                });
+                            </script>
+                        @endpush
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    @push('scripts')
-    <script>
-             $(document).ready(function() {
-                 $('#myTable').DataTable();
-             });
-         </script>
-     @endpush
 </x-app-layout>

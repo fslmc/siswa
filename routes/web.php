@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
@@ -38,6 +39,11 @@ Route::middleware('auth')->group(function () {
         Route::get('/edit/{id}', [SiswaController::class, 'edit'])->name('siswa.edit');
         Route::post('/update/{id}',[SiswaController::class,'update'])->name('siswa.update');
         Route::delete('/delete/{id}', [SiswaController::class, 'delete'])->name('siswa.delete');
+    });
+
+    Route::prefix('blog')->group(function(){
+        Route::get('/',[BlogController::class, 'index'])->name('blog.index');
+        Route::get('/create',[BlogController::class, 'create'])->name('blog.create');
     });
 });
 
