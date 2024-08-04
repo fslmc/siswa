@@ -12,7 +12,7 @@
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
         <!-- Scripts -->
-        <link rel="stylesheet" href="{{ asset('build/assets/app.css') }}">
+        <link rel="stylesheet" href="{{ asset('build/assets/app-ba1aece6.css') }}">
     </head>
     <body class="font-sans text-gray-900 antialiased">
         <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
@@ -26,6 +26,6 @@
                 {{ $slot }}
             </div>
         </div>
-        <script src="{{ asset('build/assets/app.js') }}"></script>
+        <script src="{{ asset('build/assets/app-1b4a2663.js') }}"></script>
     </body>
 </html>

@@ -28,6 +28,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.20/summernote-bs4.min.css" integrity="sha512-ngQ4IGzHQ3s/Hh8kMyG4FC74wzitukRMIcTOoKT3EyzFZCILOPF0twiXOQn75eDINUfKBYmzYn2AA8DkAk8veQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   {{-- Data Tables --}}
   <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
+  <style>
+    .card-body {
+  overflow: hidden;
+}
+  </style>
   
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -119,8 +124,14 @@
         </li>
         <li class="nav-item">
           <a href="{{ route('blog.index') }}" class="nav-link">
-            <i class="far fa-circle nav-icon"></i>
+            <i class="far fa-circle nav-icon active"></i>
             <p>Blog</p>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="{{ route('statussiswa.index') }}" class="nav-link">
+            <i class="far fa-circle nav-icon active"></i>
+            <p>Status Siswa</p>
           </a>
         </li>
       </ul>
@@ -176,6 +187,24 @@
               <a href="{{ route('siswa.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
           </div>
+          <div class="col-lg-3 col-6">
+            <div class="small-box bg-orange">
+              <div class="inner">
+                {{-- <h3>150</h3> --}}
+                @php
+                    $jumlah_blog = DB::table('blog')->count();
+                @endphp
+                <h3>{{ $jumlah_blog }}</h3>
+
+                <p>Blog</p>
+              </div>
+              <div class="icon">
+                {{-- <i class="ion ion-bag"></i> --}}
+                <i class="fa fa-newspaper"></i>
+              </div>
+              <a href="{{ route('blog.index') }}" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+            </div>
+          </div>
           <!-- ./col -->
         </div>
         <!-- /.row -->
@@ -184,7 +213,7 @@
           <!-- Left col -->
           <section class="col-lg-12 connectedSortable">
             <!-- Custom tabs (Charts with tabs)-->
-            <div class="card">
+            <div class="card" data-widget="false">
               <div class="card-header">
                 {{-- <h3 class="card-title">
                   <i class="fas fa-chart-pie mr-1"></i>
@@ -245,6 +274,8 @@
 
 <!-- jQuery -->
 {{-- <script src="{{ asset('plugins/jquery/jquery.min.js') }}"></script> --}}
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <!-- jQuery UI 1.11.4 -->
 <script src="{{ asset('plugins/jquery-ui/jquery-ui.min.js') }}"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
@@ -254,7 +285,7 @@
 <!-- Bootstrap 4 -->
 <script src="{{ asset('plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <!-- ChartJS -->
-<script src="{{ asset('plugins/chart.js/Chart.min.js') }}"></script>
+{{-- <script src="{{ asset('plugins/chart.js/Chart.min.js') }}"></script> --}}
 <!-- Sparkline -->
 <script src="{{ asset('plugins/sparklines/sparkline.js') }}"></script>
 <!-- JQVMap -->
@@ -274,14 +305,13 @@
 <!-- AdminLTE App -->
 <script src="{{ asset('dist/js/adminlte.js') }}"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="{{ asset('dist/js/demo.js') }}"></script>
+{{-- <script src="{{ asset('dist/js/demo.js') }}"></script> --}}
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{ asset('dist/js/pages/dashboard.js') }}"></script>
-{{-- swat2 --}}
+{{-- swal2 --}}
 <script src="{{ asset('vendor/sweetalert/sweetalert.all.js') }}"></script>
 <script src="{{ asset('app.js') }}"></script>
 {{-- Data Tables --}}
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
 
 @stack('scripts')

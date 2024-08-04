@@ -4,7 +4,10 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SiswaController;
+use App\Http\Controllers\StatusSiswaController;
+use App\Models\Blog;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +29,11 @@ Route::get('/', function () {
 // })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+Route::prefix('main')->group(function(){
+    Route::get('/', [HomeController::class, 'home'])->name('home');
+    Route::get('/blog', [HomeController::class, 'blogs'])->name('blog');
+    Route::get('/blog/{slug}', [HomeController::class, 'show'])->name('blog.page');
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -44,6 +52,19 @@ Route::middleware('auth')->group(function () {
     Route::prefix('blog')->group(function(){
         Route::get('/',[BlogController::class, 'index'])->name('blog.index');
         Route::get('/create',[BlogController::class, 'create'])->name('blog.create');
+        Route::post('/post',[BlogController::class, 'post'])->name('blog.post');
+        Route::get('/edit/{id}',[BlogController::class, 'edit'])->name('blog.edit');
+        Route::post('/update/{id}',[BlogController::class, 'update'])->name('blog.update');
+        Route::delete('/delete/{id}',[BlogController::class, 'delete'])->name('blog.delete');
+    });
+
+    Route::prefix('status-siswa')->group(function(){
+        Route::get('/', [StatusSiswaController::class, 'index'])->name('statussiswa.index');
+        Route::get('/create', [StatusSiswaController::class, 'create'])->name('statussiswa.create');
+        Route::post('/post',[StatusSiswaController::class,'post'])->name('statussiswa.post');
+        // Route::get('/edit/{id}', [StatusSiswaController::class, 'edit'])->name('statussiswa.edit');
+        // Route::post('/update/{id}',[StatusSiswaController::class,'update'])->name('statussiswa.update');
+        // Route::delete('/delete/{id}', [StatusSiswaController::class, 'delete'])->name('statussiswa.delete');
     });
 });
 

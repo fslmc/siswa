@@ -11,14 +11,15 @@ $(function () {
   'use strict'
 
   // Make the dashboard widgets sortable Using jquery UI
-  $('.connectedSortable').sortable({
+  $('.connectedSortable').not('[data-no-sortable="true"]').sortable({
     placeholder: 'sort-highlight',
     connectWith: '.connectedSortable',
     handle: '.card-header, .nav-tabs',
     forcePlaceholderSize: true,
-    zIndex: 999999
+    zIndex: 999999,
+    cancel: '.exception,.another-exception'
   })
-  $('.connectedSortable .card-header').css('cursor', 'move')
+  $('.connectedSortable.card-header').not('.exception, .another-exception').css('cursor', 'move')
 
   // jQuery UI sortable for the todo list
   $('.todo-list').sortable({

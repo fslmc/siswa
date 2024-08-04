@@ -5,7 +5,7 @@
         </h2>
     </x-slot>
     <div class="pagetitle">
-        <h1>Create Siswa</h1>
+        <h1>Index Siswa</h1>
         <nav>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Home</a></li>

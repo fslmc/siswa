@@ -17,7 +17,7 @@
     <section class="section dashboard">
         <div class="row">
             <div class="col-12">
-                <div class="card">
+                <div class="card exception">
                     <div class="card-body">
                         <form action="{{ route('siswa.post') }}" class="row g-3" enctype="multipart/form-data" method="POST">
                             @csrf
