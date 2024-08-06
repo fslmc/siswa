@@ -105,4 +105,11 @@ public function index($id){
         $siswaId = DB::table('list_prestasi_siswa')->where('id', $ids)->first()->siswa;
         return redirect()->route('listprestasisiswa.index', ['id' => Crypt::encrypt($siswaId)]);
     }
+
+    public function delete($id){
+        $ids = \Crypt::decrypt($id);
+        DB::table('list_prestasi_siswa')->where('id', $ids)->delete();
+        Alert::success('Success','Data Berhasil Dihapus');
+        return redirect()->back();
+    }
 }

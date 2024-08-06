@@ -74,7 +74,7 @@ Route::middleware('auth')->group(function () {
         Route::post('/post/{id}',[ListPrestasiSiswaController::class,'post'])->name('listprestasisiswa.post');
         Route::get('/edit/{id}', [ListPrestasiSiswaController::class, 'edit'])->name('listprestasisiswa.edit');
         Route::post('/update/{id}',[ListPrestasiSiswaController::class,'update'])->name('listprestasisiswa.update');
-        // Route::delete('/delete/{id}', [StatusSiswaController::class, 'delete'])->name('statussiswa.delete');
+        Route::delete('/delete/{id}', [ListPrestasiSiswaController::class, 'delete'])->name('listprestasisiswa.delete');
     });
 });
 

@@ -62,7 +62,7 @@
                                                         document.getElementById('delete-form-{{ $d->id }}').submit();
                                                     }
                                                 });"><i class="fas fa-trash"></i></a>
-                                            <form id="delete-form-{{ $d->id }}" action="#"
+                                            <form id="delete-form-{{ $d->id }}" action="{{ route('listprestasisiswa.delete', Crypt::encrypt($d->id)) }}"
                                                 method="POST" style="display: none;">
                                                 @csrf
                                                 @method('DELETE')
