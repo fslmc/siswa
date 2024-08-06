@@ -19,7 +19,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        <form action="{{ route('siswa.update', Crypt::encrypt($data->id)) }}" class="row g-3" enctype="multipart/form-data" method="POST">
+                        <form action="{{ route('siswa.update', Crypt::encrypt($data->id)) }}" class="row g-3 exception" enctype="multipart/form-data" method="POST">
                             @csrf
                             <div class="mb-3 col-12">
                                 <label for="nama" class="form-label">Nama</label>

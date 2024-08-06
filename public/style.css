@@ -1,0 +1,145 @@
+/* Style the navbar */
+.navbar {
+    background-color: #333; /* Change the background color */
+    padding: 1rem; /* Add some padding */
+    border-bottom: 1px solid #444; /* Add a bottom border */
+  }
+  
+  .navbar-nav {
+    margin: 0 auto; /* Center the navbar items */
+  }
+  
+  .nav-item {
+    margin-right: 20px; /* Add some space between items */
+  }
+  
+  .nav-link {
+    color: #fff; /* Change the text color */
+    transition: color 0.2s ease; /* Add a transition effect */
+  }
+  
+  .nav-link:hover {
+    color: #ccc; /* Change the text color on hover */
+  }
+  
+  .nav-link.active {
+    color: #fff; /* Change the text color for active links */
+    font-weight: bold; /* Make active links bold */
+  }
+
+  .card-img-top {
+    width: 100%; /* Make the image take up the full width of the card */
+    height: 200px; /* Set a fixed height for the image */
+    object-fit: cover; /* Stretch the image to fit the container */
+    object-position: center; /* Center the image horizontally and vertically */
+  }
+
+  .sticky-top {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1020; /* optional, but recommended to ensure it stays on top */
+  }
+
+  .pagination-links {
+    margin-top: 20px;
+}
+
+/* Container styling */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Heading styling */
+h1 {
+    font-size: 2.5rem;
+    color: #333;
+}
+
+/* Card styling */
+.card {
+    border: none;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Card body styling */
+.card-body {
+    padding: 15px;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.btn {
+    background-color: #007bff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    transition: background-color 0.2s;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Pagination styling */
+/* Pagination styling */
+.pagination-links .pagination {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+.pagination-links .page-link {
+    color: #007bff;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    margin: 0 5px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.pagination-links .page-link:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.pagination-links .page-item.active .page-link {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: #fff;
+}
+
+.blog-card {
+  display: grid;
+  grid-template-rows: 1fr;
+  min-height: 250px; /* adjust the value to your desired minimum height */
+}
+
+.blog-card .card-body{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
